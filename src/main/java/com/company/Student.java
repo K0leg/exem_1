@@ -1,7 +1,8 @@
 package com.company;
 
+
 class Student {
-    String name; // Ім'я студента
+    String name;
 
 
     public Student(String name) {

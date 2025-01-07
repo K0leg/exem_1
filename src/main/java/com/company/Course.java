@@ -1,6 +1,5 @@
 package com.company;
 
-
 class Course {
     String name;
     String teacher;
@@ -8,7 +7,7 @@ class Course {
     Student[] students;
     int count = 0;
 
-
+    // Конструктор
     public Course(String name, String teacher, int maxStudents) {
         this.name = name;
         this.teacher = teacher;
@@ -16,14 +15,14 @@ class Course {
         this.students = new Student[maxStudents];
     }
 
-
+    // Додати студента
     public boolean addStudent(Student student) {
         if (count < maxStudents) {
             students[count] = student;
             count++;
             return true;
         }
-        return false; // Якщо немає місць
+        return false;
     }
 
 
