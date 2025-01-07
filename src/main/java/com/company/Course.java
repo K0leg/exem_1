@@ -1,0 +1,40 @@
+package com.company;
+
+
+class Course {
+    String name;
+    String teacher;
+    int maxStudents;
+    Student[] students;
+    int count = 0;
+
+
+    public Course(String name, String teacher, int maxStudents) {
+        this.name = name;
+        this.teacher = teacher;
+        this.maxStudents = maxStudents;
+        this.students = new Student[maxStudents];
+    }
+
+
+    public boolean addStudent(Student student) {
+        if (count < maxStudents) {
+            students[count] = student;
+            count++;
+            return true;
+        }
+        return false; // Якщо немає місць
+    }
+
+
+    public void showStudents() {
+        System.out.println("Курс: " + name + " (Викладач: " + teacher + ")");
+        if (count == 0) {
+            System.out.println("Немає зареєстрованих студентів.");
+        } else {
+            for (int i = 0; i < count; i++) {
+                System.out.println((i + 1) + ". " + students[i].name);
+            }
+        }
+    }
+}
